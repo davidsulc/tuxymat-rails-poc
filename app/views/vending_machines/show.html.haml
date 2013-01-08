@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Serial number:
+  = @vending_machine.serial_number
+%p
+  %b Purchase price:
+  = @vending_machine.purchase_price
+%p
+  %b Age verification:
+  = @vending_machine.age_verification
+
+= link_to 'Edit', edit_vending_machine_path(@vending_machine)
+\|
+= link_to 'Back', vending_machines_path

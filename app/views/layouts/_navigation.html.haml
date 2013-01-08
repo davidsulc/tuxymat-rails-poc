@@ -1,0 +1,17 @@
+%nav
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container-fluid
+
+        = link_to "TuxyMat", root_path, { class: "brand" }
+        
+        %a.btn.btn-navbar{ "data-toggle" => "collapse", "data-target" => ".nav-collapse" }
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+
+        .nav-collapse.collapse
+          %ul.nav
+            %li
+              = link_to "Vending machines", vending_machines_path
+            

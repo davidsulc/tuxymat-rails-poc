@@ -1,0 +1,23 @@
+%h1 Listing vending_machines
+
+%table
+  %tr
+    %th Serial number
+    %th Purchase price
+    %th Age verification
+    %th
+    %th
+    %th
+
+  - @vending_machines.each do |vending_machine|
+    %tr
+      %td= vending_machine.serial_number
+      %td= vending_machine.purchase_price
+      %td= vending_machine.age_verification
+      %td= link_to 'Show', vending_machine
+      %td= link_to 'Edit', edit_vending_machine_path(vending_machine)
+      %td= link_to 'Destroy', vending_machine, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Vending machine', new_vending_machine_path

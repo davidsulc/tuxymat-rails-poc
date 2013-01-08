@@ -1,0 +1,10 @@
+= simple_form_for(@vending_machine) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :serial_number
+    = f.input :purchase_price
+    = f.input :age_verification
+
+  .form-actions
+    = f.button :submit
