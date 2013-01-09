@@ -1,3 +1,10 @@
+%h1= "Vending machine #{ @vending_machine.serial_number }"
+= link_to edit_vending_machine_path(@vending_machine), class: "btn" do
+  <i class="icon-pencil"></i> Edit
+
+= link_to @vending_machine, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" do
+  <i class="icon-trash"></i> Delete
+
 %p#notice= notice
 
 %p
@@ -9,7 +16,3 @@
 %p
   %b Age verification:
   = @vending_machine.age_verification
-
-= link_to 'Edit', edit_vending_machine_path(@vending_machine)
-\|
-= link_to 'Back', vending_machines_path
