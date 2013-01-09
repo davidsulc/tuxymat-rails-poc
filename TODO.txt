@@ -1,0 +1,23 @@
+authentication with Devise
+
+i18n
+  
+cucumber tests
+
+authorization with CanCan
+
+strong parameters (see railscast)
+
+audit trails
+  ActiveSupport::Concerns (see Derick Bailey's post on Los Techies, June 9, 2011)
+  paper trail gem
+  
+pagination
+
+look into
+  guard (see railscasts 264)
+  spork (see railscasts 285)
+  
+backbone
+  authorization : see DBailey's post on 2012.01.26
+
