@@ -12,7 +12,7 @@
   = @vending_machine.serial_number
 %p
   %b Purchase price:
-  = @vending_machine.purchase_price
+  = pretty_price_format(@vending_machine.purchase_price)
 %p
   %b Age verification:
   = @vending_machine.age_verification

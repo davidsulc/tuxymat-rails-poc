@@ -3,7 +3,8 @@
 
   .form-inputs
     = f.input :serial_number
-    = f.input :purchase_price, :hint => "What was the original purchase price ?"
+    = f.input :purchase_price, :input_html => { :value => pretty_price_format(@vending_machine.purchase_price) },
+      :hint => "What was the original purchase price ?"
     = f.input :age_verification, :as => :boolean
 
   .form-actions
