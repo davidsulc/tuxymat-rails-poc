@@ -1,11 +1,11 @@
-%h1 Vending machines
+%h1
+  = VendingMachine.model_name.human.pluralize
+  = link_to new_vending_machine_path, class: "btn btn-primary" do
+    <i class="icon-plus icon-white"></i>
+    = t('Create')
 
 %table
   - @vending_machines.each do |vending_machine|
     %tr
-      %td= link_to vending_machine.serial_number, vending_machine
-      %td= link_to 'Show', vending_machine_path(vending_machine), { class: "btn btn-mini" }
-
-%br
-
-= link_to 'New Vending machine', new_vending_machine_path, class: "btn btn-primary"
+      %td= vending_machine.serial_number
+      %td= link_to t('Show'), vending_machine_path(vending_machine), { class: "btn btn-mini" }

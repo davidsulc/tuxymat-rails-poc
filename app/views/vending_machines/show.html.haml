@@ -1,18 +1,18 @@
-%h1= "Vending machine #{ @vending_machine.serial_number }"
+%h1= "#{VendingMachine.model_name.human} #{ @vending_machine.serial_number }"
 = link_to edit_vending_machine_path(@vending_machine), class: "btn" do
-  <i class="icon-pencil"></i> Edit
+  <i class="icon-pencil"></i>
+  = t('Edit')
 
-= link_to @vending_machine, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn" do
-  <i class="icon-trash"></i> Delete
-
-%p#notice= notice
+= link_to @vending_machine, method: :delete, data: { confirm: t('dialog.are_you_sure') }, class: "btn" do
+  <i class="icon-trash"></i>
+  = t('Delete')
 
 %p
-  %b Serial number:
+  %b= "#{ VendingMachine.human_attribute_name('serial_number') } :"
   = @vending_machine.serial_number
 %p
-  %b Purchase price:
+  %b= "#{ VendingMachine.human_attribute_name('purchase_price') } :"
   = pretty_price_format(@vending_machine.purchase_price)
 %p
-  %b Age verification:
-  = @vending_machine.age_verification
+  %b= "#{ VendingMachine.human_attribute_name('age_verification') } :"
+  = @vending_machine.age_verification ? t('yes') : t('no')

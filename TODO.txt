@@ -1,6 +1,4 @@
 authentication with Devise
-
-i18n
   
 cucumber tests
 

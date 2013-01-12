@@ -44,7 +44,7 @@ class VendingMachinesController < ApplicationController
 
     respond_to do |format|
       if @vending_machine.save
-        flash[:success] = 'Vending machine was successfully created.'
+        flash[:success] = I18n.t('vending_machines.create.success')
         format.html { redirect_to @vending_machine  }
         format.json { render json: @vending_machine, status: :created, location: @vending_machine }
       else
@@ -61,7 +61,7 @@ class VendingMachinesController < ApplicationController
 
     respond_to do |format|
       if @vending_machine.update_attributes(params[:vending_machine])
-        flash[:success] = 'Vending machine was successfully updated.'
+        flash[:success] = I18n.t('vending_machines.update.success')
         format.html { redirect_to @vending_machine }
         format.json { head :no_content }
       else

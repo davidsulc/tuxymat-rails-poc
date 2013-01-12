@@ -1,0 +1,11 @@
+fr:
+  Cancel: Annuler
+  Create: Créer
+  Delete: Supprimer
+  Edit: Editer
+  Show: Afficher
+  'no': non
+  'yes': oui
+  
+  dialog:
+    are_you_sure: En êtes-vous sûr ?

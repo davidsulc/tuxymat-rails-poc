@@ -4,9 +4,12 @@
   .form-inputs
     = f.input :serial_number
     = f.input :purchase_price, :input_html => { :value => pretty_price_format(@vending_machine.purchase_price) },
-      :hint => "What was the original purchase price ?"
+      :hint => t('vending_machines.purchase_price_hint')
     = f.input :age_verification, :as => :boolean
 
   .form-actions
-    = f.button :submit, class: "btn btn-primary"
-    = link_to "Cancel", :back, class: "btn"
+    - submit_button_text = case params[:action]
+      - when 'new', 'create' then t('vending_machines.create.message')
+      - when 'edit', 'update' then t('vending_machines.update.message')
+    = f.button :submit, value: submit_button_text, class: "btn btn-primary"
+    = link_to t('Cancel'), :back, class: "btn"

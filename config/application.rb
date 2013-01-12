@@ -71,6 +71,9 @@ module TuxyMat
       g.template_engine :haml
     end
     
+    # load nested locale dictionary files
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    
     # autoload lib directory
     config.autoload_paths += %W(#{config.root}/lib)
     config.autoload_paths += Dir["#{config.root}/lib/**/"]

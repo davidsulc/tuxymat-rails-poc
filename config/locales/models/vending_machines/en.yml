@@ -1,0 +1,31 @@
+en:
+  activerecord:
+    models:
+      vending_machine: Vending machine
+    attributes:
+      vending_machine:
+        age_verification: "Age verification"
+        purchase_price: "Purchase price"
+        serial_number: "Serial number"
+    errors:
+      models:
+        vending_machine:
+          attributes:
+            serial_number:
+              taken: "already exists"
+            purchase_price:
+              invalid: "max 2 digits allowed after '.'"
+              less_than: "must be less than %{count}"
+              greater_than: "must be greater than %{count}"
+        
+  vending_machines:
+    create:
+      message: Create new vending machine
+      success: Vending machine was successfully created.
+    update:
+      message: Update vending machine
+      success: Vending machine was successfully updated.
+    new: New vending machine
+    editing: Editing vending machine
+    purchase_price_hint: "What was the original purchase price?"
+        

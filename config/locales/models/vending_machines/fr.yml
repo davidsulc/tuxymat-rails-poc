@@ -1,0 +1,30 @@
+fr:
+  activerecord:
+    models:
+      vending_machine: Automate
+    attributes:
+      vending_machine:
+        age_verification: "Verification d'âge"
+        purchase_price: "Prix d'achat"
+        serial_number: "Numéro de série"
+    errors:
+      models:
+        vending_machine:
+          attributes:
+            serial_number:
+              taken: "existe déjà"
+            purchase_price:
+              invalid: "max 2 caractères après '.'"
+              less_than: "doit être inférieur à %{count}"
+              greater_than: "doit être supérieur à %{count}"
+        
+  vending_machines:
+    create:
+      message: Créer un nouvel automate
+      success: L'automate a été créé avec succès.
+    update:
+      message: Mettre à jour l'automate
+      success: L'automate a été mis à jour avec succès.
+    new: Nouvel automate
+    editing: Mise à jour d'automate
+    purchase_price_hint: "Quel était le prix d'achat d'origine ?"
