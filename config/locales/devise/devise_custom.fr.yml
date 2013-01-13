@@ -1,0 +1,7 @@
+fr:
+  devise:
+    sign_in: "Connexion"
+    sign_out: "Déconnexion"
+    
+    links:
+      forgotten_password: "Mot de passe oublié ?"

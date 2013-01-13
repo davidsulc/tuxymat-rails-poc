@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      user: User
+    attributes:
+      user:
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me"
+        
