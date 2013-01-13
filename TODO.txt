@@ -1,4 +1,5 @@
 authentication with Devise
+Devise : set config.action_mailer.default_url_options in config/environments/production.rb
   
 cucumber tests
 
