@@ -1,7 +1,7 @@
 TuxyMat::Application.routes.draw do
-  devise_for :users
-
   scope "(:locale)", :locale => /en|fr/ do
+    devise_for :users
+    
     resources :vending_machines
 
 
