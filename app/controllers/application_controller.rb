@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   before_filter :set_locale
+  before_filter :authenticate_user!
   
   # override to pass around locale in URL
   def default_url_options(options={})
