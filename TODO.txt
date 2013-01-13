@@ -1,7 +1,4 @@
-authentication with Devise
-Devise : set config.action_mailer.default_url_options in config/environments/production.rb
-  
-cucumber tests
+tests: cucumber, rspec
 
 authorization with CanCan
 
@@ -12,6 +9,8 @@ audit trails
   paper trail gem
   
 pagination
+
+Devise : set config.action_mailer.default_url_options in config/environments/production.rb
 
 look into
   guard (see railscasts 264)
