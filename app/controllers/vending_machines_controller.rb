@@ -76,6 +76,7 @@ class VendingMachinesController < ApplicationController
   def destroy
     @vending_machine = VendingMachine.find(params[:id])
     @vending_machine.destroy
+    flash[:success] = I18n.t('vending_machines.delete.success')
 
     respond_to do |format|
       format.html { redirect_to vending_machines_url }

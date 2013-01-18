@@ -25,7 +25,10 @@ fr:
     update:
       message: Mettre à jour l'automate
       success: L'automate a été mis à jour avec succès.
+    delete:
+      success: L'automate a été supprimé avec succès.
     new: Nouvel automate
     editing: Mise à jour d'automate
+    none_to_display: Il n'y a pas d'automates à afficher.
     purchase_price_hint: "S'il est présent, il doit être compris entre 0 et 10'000"
     serial_number_hint: "Doit être unique"
