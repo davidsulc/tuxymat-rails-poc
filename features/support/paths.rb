@@ -9,6 +9,8 @@ module NavigationHelpers
       vending_machines_path
     when /^the page for vending machine "(.+)"$/
       vending_machine_path(VendingMachine.find_by_serial_number($1))
+    when /^the new vending machine page$/
+      new_vending_machine_path
       
     end
   end
