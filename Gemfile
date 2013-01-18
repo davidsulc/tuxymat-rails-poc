@@ -22,7 +22,7 @@ group :test, :development do
   gem 'pry'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  gem 'ffaker'
   gem 'capybara'
   gem 'guard-spork'
   gem 'guard-bundler'
