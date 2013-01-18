@@ -27,4 +27,5 @@ fr:
       success: L'automate a été mis à jour avec succès.
     new: Nouvel automate
     editing: Mise à jour d'automate
-    purchase_price_hint: "Quel était le prix d'achat d'origine ?"
+    purchase_price_hint: "S'il est présent, il doit être compris entre 0 et 10'000"
+    serial_number_hint: "Doit être unique"
