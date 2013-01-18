@@ -1,4 +1,4 @@
-tests: cucumber, rspec
+cucumber tests
 
 authorization with CanCan
 

@@ -1,5 +1,13 @@
 TuxyMat::Application.routes.draw do
-  scope "(:locale)", :locale => /en|fr/ do
+  # so that rspec uses the proper locale when testing (otherwise it gets the url wrong)
+  # https://github.com/rspec/rspec-rails/issues/562
+  if Rails.env.test?
+    defaults = {:locale => nil}
+  else
+    defaults = {}
+  end
+  
+  scope "(:locale)", :locale => /en|fr/, :defaults => defaults do
     devise_for :users
     
     resources :vending_machines

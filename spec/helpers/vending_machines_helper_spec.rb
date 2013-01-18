@@ -1,15 +1,9 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the VendingMachinesHelper. For example:
-#
-# describe VendingMachinesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe VendingMachinesHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "pretty_price_format" do
+    it "formats a price for display" do
+      helper.pretty_price_format("12345.5").should == "12'345.50"
+    end
+  end
 end
