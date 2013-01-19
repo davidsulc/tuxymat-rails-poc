@@ -4,8 +4,15 @@
     <i class="icon-plus icon-white"></i>
     = t('Create')
 
-%table
-  - @vending_machines.each do |vending_machine|
-    %tr
-      %td= vending_machine.serial_number
-      %td= link_to t('Show'), vending_machine_path(vending_machine), { class: "btn btn-mini" }
+- if @vending_machines.size > 0
+  %table
+    - @vending_machines.each do |vending_machine|
+      %tr
+        %td= vending_machine.serial_number
+        %td= link_to t('Show'), vending_machine_path(vending_machine), { class: "btn btn-mini" }
+- else
+  .alert.alert-info
+    %button.close{ "data-dismiss" => "alert" }
+      ×
+
+    = t('vending_machines.none_to_display')

@@ -14,6 +14,12 @@ group :development do
   gem 'therubyracer', '0.10.2', :platforms => :ruby
 end
 
+group :test do
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'rspec-instafail'

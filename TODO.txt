@@ -1,5 +1,3 @@
-cucumber tests
-
 authorization with CanCan
 
 strong parameters (see railscast)
