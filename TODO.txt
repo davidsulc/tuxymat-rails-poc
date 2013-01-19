@@ -1,5 +1,7 @@
 authorization with CanCan
 
+add Contract and Location models
+
 strong parameters (see railscast)
 
 audit trails
