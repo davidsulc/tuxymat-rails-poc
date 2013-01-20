@@ -1,0 +1,31 @@
+en:
+  activerecord:
+    models:
+      contract: Contract
+    attributes:
+      contract:
+        start_date: Start date
+        end_date: End date
+    errors:
+      models:
+        contract:
+          end_date:
+            not_after_start_date: must be after start date
+          partner_id:
+            invalid: is invalid
+          vending_machine_id:
+            invalid: is invalid
+            
+  contracts:
+    create:
+      message: Create new contract
+      success: Contract was successfully created.
+    update:
+      message: Update contract
+      success: Contract was successfully updated.
+    delete:
+      success: Contract was successfully deleted.
+    new: New contract
+    editing: Editing contract
+    none_to_display: There are no contracts to display.
+        
