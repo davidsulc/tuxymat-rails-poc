@@ -1,6 +1,8 @@
+cucumber tests for contracts
+
 authorization with CanCan
 
-add Contract and Location models
+====================================== MVP
 
 strong parameters (see railscast)
 
