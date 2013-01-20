@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :contract do
     start_date "2013-01-20"
-    vending_machine_id 1
-    partner_id 1
+    vending_machine
+    partner
   end
 end

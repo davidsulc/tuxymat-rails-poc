@@ -1,6 +1,8 @@
 class VendingMachine < ActiveRecord::Base
   attr_accessible :age_verification, :purchase_price, :serial_number
   
+  has_many :contracts
+  
   validates :serial_number, presence: true, uniqueness: true
   validates :purchase_price,
       numericality: { :unless => "purchase_price.blank?", greater_than: 0, less_than: 10000 },

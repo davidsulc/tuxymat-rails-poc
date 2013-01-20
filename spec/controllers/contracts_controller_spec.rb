@@ -7,7 +7,11 @@ describe ContractsController do
   end
   
   def valid_attributes
-    FactoryGirl.attributes_for(:contract)
+    # use 'build' so required models (e.g. partner, vending machine) are created
+    attributes = FactoryGirl.build(:contract).attributes
+    # don't put invalid attributes (e.g. id) in the attributes used for mass update (raises an exception)
+    attributes.select!{|k,v| Contract.accessible_attributes.include? k.to_s }
+    attributes
   end
 
   describe "GET index" do
