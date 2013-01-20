@@ -3,7 +3,7 @@
 
   .form-inputs
     = f.input :start_date
-    = f.input :end_date
+    = f.input :end_date, :as => :date, :include_blank => true
     = f.input :vending_machine_id
     = f.input :partner_id
 
