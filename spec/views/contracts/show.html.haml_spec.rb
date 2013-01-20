@@ -2,10 +2,7 @@ require 'spec_helper'
 
 describe "contracts/show" do
   before(:each) do
-    @contract = assign(:contract, stub_model(Contract,
-      :vending_machine_id => 1,
-      :partner_id => 2
-    ))
+    @contract = FactoryGirl.create(:contract)
   end
 
   it "renders attributes in <p>" do
