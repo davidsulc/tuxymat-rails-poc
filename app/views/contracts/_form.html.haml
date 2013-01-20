@@ -4,8 +4,8 @@
   .form-inputs
     = f.input :start_date
     = f.input :end_date, :as => :date, :include_blank => true
-    = f.input :vending_machine_id
-    = f.input :partner_id
+    = f.association :vending_machine, :label_method => :serial_number, :value_method => :id, :include_blank => false
+    = f.association :partner, :label_method => :name, :value_method => :id, :include_blank => false
 
   .form-actions
     = f.button :submit
