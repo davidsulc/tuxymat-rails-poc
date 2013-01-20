@@ -1,0 +1,11 @@
+= simple_form_for(@contract) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :start_date
+    = f.input :end_date
+    = f.input :vending_machine_id
+    = f.input :partner_id
+
+  .form-actions
+    = f.button :submit

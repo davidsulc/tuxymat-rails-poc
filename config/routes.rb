@@ -1,4 +1,7 @@
 TuxyMat::Application.routes.draw do
+  resources :contracts
+
+
   # so that rspec uses the proper locale when testing (otherwise it gets the url wrong)
   # https://github.com/rspec/rspec-rails/issues/562
   if Rails.env.test?
