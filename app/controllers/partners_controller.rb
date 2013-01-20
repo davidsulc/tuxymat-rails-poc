@@ -62,7 +62,7 @@ class PartnersController < ApplicationController
     respond_to do |format|
       if @partner.update_attributes(params[:partner])
         flash[:success] = I18n.t('vending_machines.update.success')
-        format.html { redirect_to @partner }
+        format.html { redirect_to partners_path }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

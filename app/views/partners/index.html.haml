@@ -7,7 +7,7 @@
 - if @partners.size > 0
   %table
     - @partners.each do |partner|
-      %tr
+      %tr{ id: "partner_#{partner.id}" }
         %td= partner.name
         %td
           = link_to edit_partner_path(partner), class: "btn btn-mini" do
