@@ -1,0 +1,27 @@
+en:
+  activerecord:
+    models:
+      partner: Partner
+    attributes:
+      partner:
+        name: Name
+    errors:
+      models:
+        partner:
+          attributes:
+            name:
+              taken: already exists
+        
+  partners:
+    create:
+      message: Create new partner
+      success: Partner was successfully created.
+    update:
+      message: Update partner
+      success: Partner was successfully updated.
+    delete:
+      success: Partner was successfully deleted.
+    new: New partner
+    editing: Editing partner
+    name_hint: Must be unique
+    none_to_display: There are no partners to display.

@@ -13,8 +13,8 @@
         - if user_signed_in?
           .nav-collapse.collapse
             %ul.nav{ role: "navigation" }
-              %li
-                = link_to VendingMachine.model_name.human.pluralize, vending_machines_path
+              %li= link_to VendingMachine.model_name.human.pluralize, vending_machines_path
+              %li= link_to Partner.model_name.human.pluralize, partners_path
               
             %p.navbar-text.pull-right
               = link_to t('devise.sign_out'), destroy_user_session_path, method: :delete, class: "navbar-link"

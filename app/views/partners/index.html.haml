@@ -1,19 +1,25 @@
-%h1 Listing partners
+%h1
+  = Partner.model_name.human.pluralize
+  = link_to new_partner_path, class: "btn btn-primary" do
+    <i class="icon-plus icon-white"></i>
+    = t('Create')
+    
+- if @partners.size > 0
+  %table
+    - @partners.each do |partner|
+      %tr
+        %td= partner.name
+        %td
+          = link_to edit_partner_path(partner), class: "btn btn-mini" do
+            <i class="icon-pencil"></i>
+            = t('Edit')
+        %td
+          = link_to partner, method: :delete, data: { confirm: t('dialog.are_you_sure') }, class: "btn btn-mini" do
+            <i class="icon-trash"></i>
+            = t('Delete')
+- else
+  .alert.alert-info
+    %button.close{ "data-dismiss" => "alert" }
+      ×
 
-%table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-
-  - @partners.each do |partner|
-    %tr
-      %td= partner.name
-      %td= link_to 'Show', partner
-      %td= link_to 'Edit', edit_partner_path(partner)
-      %td= link_to 'Destroy', partner, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Partner', new_partner_path
+    = t('partners.none_to_display')

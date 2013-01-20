@@ -18,14 +18,6 @@ describe PartnersController do
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested partner as @partner" do
-      partner = Partner.create! valid_attributes
-      get :show, {:id => partner.to_param}
-      assigns(:partner).should eq(partner)
-    end
-  end
-
   describe "GET new" do
     it "assigns a new partner as @partner" do
       get :new, {}
@@ -57,7 +49,7 @@ describe PartnersController do
 
       it "redirects to the created partner" do
         post :create, {:partner => valid_attributes}
-        response.should redirect_to(Partner.last)
+        response.should redirect_to(partners_path)
       end
     end
 

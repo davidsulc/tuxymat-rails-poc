@@ -44,7 +44,8 @@ class PartnersController < ApplicationController
 
     respond_to do |format|
       if @partner.save
-        format.html { redirect_to @partner, notice: 'Partner was successfully created.' }
+        flash[:success] = I18n.t('partners.create.success')
+        format.html { redirect_to partners_path }
         format.json { render json: @partner, status: :created, location: @partner }
       else
         format.html { render action: "new" }
@@ -60,7 +61,8 @@ class PartnersController < ApplicationController
 
     respond_to do |format|
       if @partner.update_attributes(params[:partner])
-        format.html { redirect_to @partner, notice: 'Partner was successfully updated.' }
+        flash[:success] = I18n.t('vending_machines.update.success')
+        format.html { redirect_to @partner }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -74,6 +76,7 @@ class PartnersController < ApplicationController
   def destroy
     @partner = Partner.find(params[:id])
     @partner.destroy
+    flash[:success] = I18n.t('partners.delete.success')
 
     respond_to do |format|
       format.html { redirect_to partners_url }
