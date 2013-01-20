@@ -2,7 +2,7 @@ class ContractsController < ApplicationController
   # GET /contracts
   # GET /contracts.json
   def index
-    @contracts = Contract.all
+    @contracts = Contract.includes(:partner, :vending_machine).all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class ContractsController < ApplicationController
   # GET /contracts/1
   # GET /contracts/1.json
   def show
-    @contract = Contract.find(params[:id])
+    @contract = Contract.includes(:partner, :vending_machine).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

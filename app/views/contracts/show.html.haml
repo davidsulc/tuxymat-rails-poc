@@ -1,18 +1,21 @@
-%p#notice= notice
+%h1= Contract.model_name.human
+= link_to edit_contract_path(@contract), class: "btn" do
+  <i class="icon-pencil"></i>
+  = t('Edit')
+
+= link_to @contract, method: :delete, data: { confirm: t('dialog.are_you_sure') }, class: "btn" do
+  <i class="icon-trash"></i>
+  = t('Delete')
 
 %p
-  %b Start date:
-  = @contract.start_date
+  %b= "#{ Partner.model_name.human } :"
+  = @contract.partner.name
 %p
-  %b End date:
-  = @contract.end_date
+  %b= "#{ VendingMachine.model_name.human } :"
+  = link_to @contract.vending_machine.serial_number, vending_machine_path(@contract.vending_machine)
 %p
-  %b Vending machine:
-  = @contract.vending_machine_id
+  %b= "#{ Contract.human_attribute_name('start_date') } :"
+  = l(@contract.start_date)
 %p
-  %b Partner:
-  = @contract.partner_id
-
-= link_to 'Edit', edit_contract_path(@contract)
-\|
-= link_to 'Back', contracts_path
+  %b= "#{ Contract.human_attribute_name('end_date') } :"
+  = l(@contract.end_date) if @contract.end_date

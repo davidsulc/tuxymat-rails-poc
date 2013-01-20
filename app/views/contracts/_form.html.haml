@@ -1,11 +1,17 @@
-= simple_form_for(@contract) do |f|
+= simple_form_for(@contract, :html => { :class => 'form-horizontal' }) do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :start_date
     = f.input :end_date, :as => :date, :include_blank => true
-    = f.association :vending_machine, :label_method => :serial_number, :value_method => :id, :include_blank => false
-    = f.association :partner, :label_method => :name, :value_method => :id, :include_blank => false
+    = f.association :vending_machine, :label => VendingMachine.model_name.human, :label_method => :serial_number,
+        :value_method => :id, :include_blank => false, :hint => link_to(t('vending_machines.new'), new_vending_machine_path)
+    = f.association :partner, :label => Partner.model_name.human, :label_method => :name, :value_method => :id,
+        :include_blank => false, :hint => link_to(t('partners.new'), new_partner_path)
 
   .form-actions
-    = f.button :submit
+    - submit_button_text = case params[:action]
+      - when 'new', 'create' then t('contracts.create.message')
+      - when 'edit', 'update' then t('contracts.update.message')
+    = f.button :submit, value: submit_button_text, class: "btn btn-primary"
+    = link_to t('Cancel'), :back, class: "btn"
