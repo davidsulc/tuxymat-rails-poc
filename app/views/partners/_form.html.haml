@@ -1,0 +1,12 @@
+= simple_form_for(@partner, :html => { :class => 'form-horizontal' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name, :hint => t('partners.name_hint')
+
+  .form-actions
+    - submit_button_text = case params[:action]
+      - when 'new', 'create' then t('partners.create.message')
+      - when 'edit', 'update' then t('partners.update.message')
+    = f.button :submit, value: submit_button_text, class: "btn btn-primary"
+    = link_to t('Cancel'), :back, class: "btn"
