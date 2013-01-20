@@ -88,10 +88,10 @@ describe PartnersController do
         assigns(:partner).should eq(partner)
       end
 
-      it "redirects to the partner" do
+      it "redirects to the partner index page" do
         partner = Partner.create! valid_attributes
         put :update, {:id => partner.to_param, :partner => valid_attributes}
-        response.should redirect_to(partner)
+        response.should redirect_to(partners_path)
       end
     end
 
