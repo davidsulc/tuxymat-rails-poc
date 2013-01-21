@@ -18,4 +18,11 @@ class ApplicationController < ActionController::Base
     # fallback
     I18n.locale = I18n.default_locale if I18n.locale.nil?
   end
+  
+  # if a user tries to access an action he's not authorized to, redirect him to the
+  # root_url with an error message
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = t('access_denied')
+    redirect_to root_url
+  end 
 end

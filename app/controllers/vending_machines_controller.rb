@@ -24,6 +24,7 @@ class VendingMachinesController < ApplicationController
   # GET /vending_machines/new
   # GET /vending_machines/new.json
   def new
+    authorize! :create, VendingMachine
     @vending_machine = VendingMachine.new
 
     respond_to do |format|
@@ -34,12 +35,14 @@ class VendingMachinesController < ApplicationController
 
   # GET /vending_machines/1/edit
   def edit
+    authorize! :update, VendingMachine
     @vending_machine = VendingMachine.find(params[:id])
   end
 
   # POST /vending_machines
   # POST /vending_machines.json
   def create
+    authorize! :create, VendingMachine
     @vending_machine = VendingMachine.new(params[:vending_machine])
 
     respond_to do |format|
@@ -57,6 +60,7 @@ class VendingMachinesController < ApplicationController
   # PUT /vending_machines/1
   # PUT /vending_machines/1.json
   def update
+    authorize! :update, VendingMachine
     @vending_machine = VendingMachine.find(params[:id])
 
     respond_to do |format|
@@ -74,6 +78,7 @@ class VendingMachinesController < ApplicationController
   # DELETE /vending_machines/1
   # DELETE /vending_machines/1.json
   def destroy
+    authorize! :destroy, VendingMachine
     @vending_machine = VendingMachine.find(params[:id])
     @vending_machine.destroy
     flash[:success] = I18n.t('vending_machines.delete.success')

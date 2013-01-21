@@ -14,9 +14,13 @@ describe "vending_machines/index" do
         :age_verification => false
       )
     ])
+    @ability = Object.new
+    @ability.extend(CanCan::Ability)
+    controller.stub(:current_ability) { @ability }
   end
 
   it "renders a list of vending_machines" do
+    @ability.can :manage, VendingMachine
     render
     assert_select "tr>td", :text => "Serial Number".to_s, :count => 2
   end

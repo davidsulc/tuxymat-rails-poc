@@ -1,8 +1,9 @@
 %h1
   = VendingMachine.model_name.human.pluralize
-  = link_to new_vending_machine_path, class: "btn btn-primary" do
-    <i class="icon-plus icon-white"></i>
-    = t('Create')
+  - if can? :create, VendingMachine
+    = link_to new_vending_machine_path, class: "btn btn-primary" do
+      <i class="icon-plus icon-white"></i>
+      = t('Create')
 
 - if @vending_machines.size > 0
   %table

@@ -6,6 +6,7 @@ fr:
   Show: Afficher
   'no': non
   'yes': oui
+  access_denied: Accès refusé.
   
   dialog:
     are_you_sure: En êtes-vous sûr ?

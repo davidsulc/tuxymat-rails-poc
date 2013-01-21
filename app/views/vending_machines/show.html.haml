@@ -1,11 +1,13 @@
 %h1= "#{VendingMachine.model_name.human} #{ @vending_machine.serial_number }"
-= link_to edit_vending_machine_path(@vending_machine), class: "btn" do
-  <i class="icon-pencil"></i>
-  = t('Edit')
+-if can? :update, @vending_machine
+  = link_to edit_vending_machine_path(@vending_machine), class: "btn" do
+    <i class="icon-pencil"></i>
+    = t('Edit')
 
-= link_to @vending_machine, method: :delete, data: { confirm: t('dialog.are_you_sure') }, class: "btn" do
-  <i class="icon-trash"></i>
-  = t('Delete')
+-if can? :destroy, @vending_machine
+  = link_to @vending_machine, method: :delete, data: { confirm: t('dialog.are_you_sure') }, class: "btn" do
+    <i class="icon-trash"></i>
+    = t('Delete')
 
 %p
   %b= "#{ VendingMachine.human_attribute_name('serial_number') } :"
