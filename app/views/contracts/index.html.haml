@@ -1,0 +1,27 @@
+%h1
+  = Contract.model_name.human.pluralize
+  = link_to new_contract_path, class: "btn btn-primary" do
+    <i class="icon-plus icon-white"></i>
+    = t('Create')
+
+- if @contracts.size > 0
+  %table.contracts
+    %tr
+      %th= Partner.model_name.human
+      %th= VendingMachine.model_name.human
+      %th= Contract.human_attribute_name('start_date')
+      %th= Contract.human_attribute_name('end_date')
+      %th
+    - @contracts.each do |contract|
+      %tr
+        %td= contract.partner.name
+        %td= contract.vending_machine.serial_number
+        %td= l(contract.start_date)
+        %td= l(contract.end_date) if contract.end_date
+        %td= link_to t('Show'), contract_path(contract), { class: "btn btn-mini" }
+- else
+  .alert.alert-info
+    %button.close{ "data-dismiss" => "alert" }
+      ×
+
+    = t('contracts.none_to_display')

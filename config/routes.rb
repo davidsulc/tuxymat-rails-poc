@@ -10,6 +10,8 @@ TuxyMat::Application.routes.draw do
   scope "(:locale)", :locale => /en|fr/, :defaults => defaults do
     devise_for :users
     
+    resources :contracts
+    
     resources :partners
     
     resources :vending_machines
