@@ -74,6 +74,7 @@ class ContractsController < ApplicationController
   def destroy
     @contract = Contract.find(params[:id])
     @contract.destroy
+    flash[:success] = I18n.t('contracts.delete.success')
 
     respond_to do |format|
       format.html { redirect_to contracts_url }

@@ -3,7 +3,7 @@ Feature: update partner
   In order to alter the information on an existing partner
   As an admin
   I want to be able to edit a partner
-@wip
+
   Scenario: updating partner
     Given I am signed in as an admin
     And there are the following partners:
