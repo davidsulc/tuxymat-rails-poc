@@ -21,6 +21,7 @@ group :test do
 end
 
 group :test, :development do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'rspec-instafail'
   gem 'rb-fsevent'
@@ -39,7 +40,6 @@ end
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'simple_form'
-gem 'sqlite3'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'cancan'
