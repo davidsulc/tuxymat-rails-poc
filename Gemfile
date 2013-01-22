@@ -37,6 +37,8 @@ group :test, :development do
   gem 'guard-migrate'
 end
 
+gem 'pg', :group => :production
+
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'simple_form'
